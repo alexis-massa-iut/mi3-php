@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Civilité</title>
+	</head>
+	<body>
+		<form method="post" action="personne-affiche.php?param1=val1&param2=val2">
+			<label for="nomSaisiJS" style="display:block; float:left; width:70px">Nom</label>
+			<p><input type="text" size="30" name="nomSaisi" id="nomSaisiJS"></p>
+			<label for="prenomSaisiJS" style="display:block; float:left; width:70px">Prénom</label>
+			<input type="text" size="30" name="prenomSaisi" id="prenomSaisiJS"><p></p>
+			<label for="civiliteSaisieJS" id="civiliteSaisieJS" style="display:block; float:left; width:70px">Civilité</label>
+			<select name="civiliteSaisie">
+				<option value="monsieur">M.
+				<option value="madame">Mme
+				<option value="mademoiselle">Mlle
+			</select><p></p>
+			<input type="submit" name="bSubmit" value="Valider">
+		</form>
+	</body>
+</html>
