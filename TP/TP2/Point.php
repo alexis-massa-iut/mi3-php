@@ -2,7 +2,9 @@
 
 namespace POO\Figures;
 
-class Point
+require_once('AFigure.php');
+
+class Point extends AFigure
 {
     private $x;
     private $y;
@@ -13,6 +15,7 @@ class Point
         $this->y = $y;
     }
 
+    // GETTERS AND SETTERS
     public function setX(int $x): self
     {
         $this->x = $x;
@@ -38,6 +41,6 @@ class Point
 
     public function __toString(): string
     {
-        return "[" . $this->getX() . "; " . $this->getY() . "]";
+        return parent::getAsString() . "[" . $this->getX() . "; " . $this->getY() . "]";
     }
 }

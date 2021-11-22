@@ -18,12 +18,17 @@ echo $point3 . "<br>";
 echo $point4 . "<br>";
 
 echo "<br> Segments <br>";
-$segment1 = new Segment($point1, $point2);
-$segment2 = new Segment($point2, $point3);
-$segment3 = new Segment($point3, $point4);
-$segment4 = new Segment($point4, $point1);
+$segment1 = new Segment("blue", $point1, $point2);
+$segment2 = new Segment("red", $point2, $point3);
+$segment3 = new Segment("green", $point3, $point4);
+$segment4 = new Segment("yellow", $point4, $point1);
 
-echo $segment1 . "<br>";
-echo $segment2 . "<br>";
-echo $segment3 . "<br>";
-echo $segment4 . "<br>";
+echo $segment1 . " longueur : " . $segment1->getLongueur() . "<br>";
+echo $segment2 . " longueur : " . $segment2->getLongueur() . "<br>";
+echo $segment3 . " longueur : " . $segment3->getLongueur() . "<br>";
+echo $segment4 . " longueur : " . $segment4->getLongueur() . "<br>";
+
+$test1 = new Point(-2, 3);
+$test2 = new Point(4, -5);
+$segment_test = new Segment("vert", $test1, $test2);
+echo $segment_test . " longueur : " . $segment_test->getLongueur() . "<br>";

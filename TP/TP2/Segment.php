@@ -2,18 +2,21 @@
 
 namespace POO\Figures;
 
-class Segment
-{
+require_once('AFigure.php');
 
+class Segment extends AFigure
+{
     private $start;
     private $end;
 
-    public function __construct(Point $start, Point $end)
+    public function __construct(String $couleur, Point $start, Point $end)
     {
+        parent::__construct($couleur);
         $this->start = $start;
         $this->end = $end;
     }
 
+    // GETTERS AND SETTERS
     public function getStart(): Point
     {
         return $this->start;
@@ -34,6 +37,20 @@ class Segment
     {
         $this->each = $end;
         return $this;
+    }
+
+    /**
+     * @return float longueur du segment
+     */
+    public function getLongueur(): float
+    {
+        $Lx = $this->start->getX() - $this->end->getX();
+        $Ly = $this->start->getY() - $this->end->getY();
+        $Ax = abs($Lx);
+        $Ay = abs($Ly);
+        $pow = pow($Ax, 2) + pow($Ay, 2);
+        $length = sqrt($pow);
+        return $length;
     }
 
     public function __toString(): string
